@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,9 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     AppRoutingModule,
     BrowserAnimationsModule,
     AccordionModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
