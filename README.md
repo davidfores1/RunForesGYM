@@ -1,7 +1,7 @@
 # RunForesGYM
 Angular CLI: 12.1.4<br>
 Angular: 12.1.5<br>
-Firebase
+firebase": "^7.24.0
 
 <h2>Al clonar un proyecto de Laravel desde GitHub:</h2>
 Ejecutar npm install
