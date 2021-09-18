@@ -1,6 +1,6 @@
 # RunForesGYM
-Angular CLI: 12.1.4
-Angular: 12.1.5
+Angular CLI: 12.1.4<br>
+Angular: 12.1.5<br>
 Firebase
 
 <h2>Al clonar un proyecto de Laravel desde GitHub:</h2>
