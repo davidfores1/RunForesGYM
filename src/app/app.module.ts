@@ -9,10 +9,12 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
