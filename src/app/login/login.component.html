@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="login">
+    <div class="login-screen">
+      <div class="app-title">
+        <img src="assets/login.png" width="250" height="250">
+      </div>
+  
+      <form [formGroup]="formularioLgin">
+        <div class="login-form">
+          <div class="control-group">
+            <input type="email" class="login-field" formControlName="email" placeholder="Correo" id="login-name">
+          </div>
+  
+          <div class="control-group">
+            <input type="password" class="login-field" formControlName="password" placeholder="password" id="login-pass">
+          </div>
+          <button type="submit" (click)="ingresar()" [disabled]="!formularioLgin.valid" class="btn btn-primary btn-large">Ingresar</button>
+        </div>
+      </form>
+    </div>
+  </div>

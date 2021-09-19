@@ -14,7 +14,7 @@ export class AppComponent {
   cargando:boolean = true;
   
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth) {
   
   this.afAuth.user.subscribe((usuario)=>{
 
