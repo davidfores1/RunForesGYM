@@ -20,15 +20,16 @@ export class AppComponent {
 
     setTimeout(() => {
       this.cargando = false
-      this.usuario = usuario!;
     }, 2000);
-  
+    this.usuario = usuario!;
   })
 
   }
-  login() {
-    this.afAuth.auth.signInWithEmailAndPassword('david717@hotmail.es','123456')
+
+  ngOnInit(): void {
+    
   }
+
   logout() {
     this.afAuth.auth.signOut();
   }
