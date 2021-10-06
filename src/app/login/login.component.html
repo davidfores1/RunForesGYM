@@ -8,13 +8,25 @@
         <div class="login-form">
           <div class="control-group">
             <input type="email" class="login-field" formControlName="email" placeholder="Correo" id="login-name">
+            <div *ngIf="formularioLgin.controls['email'].invalid && formularioLgin.controls['email'].dirty" class="alert alert-danger" role="alert">
+              <span *ngIf="formularioLgin.controls['email'].errors.required">Correo es requerido</span>
+              <span>El correo no es valido</span>  
+            </div>
           </div>
   
           <div class="control-group">
-            <input type="password" class="login-field" formControlName="password" placeholder="password" id="login-pass">
+            <input type="password" (keyUp.enter)="ingresar()" class="login-field" formControlName="password" placeholder="password" id="login-pass">
+            <div *ngIf="formularioLgin.controls['password'].invalid && formularioLgin.controls['password'].dirty" class="alert alert-danger" role="alert">
+              <span *ngIf="formularioLgin.controls['password'].errors.required">La contraseña es requerida</span>  
+            </div>
           </div>
           <button type="submit" (click)="ingresar()" [disabled]="!formularioLgin.valid" class="btn btn-primary btn-large">Ingresar</button>
         </div>
       </form>
+
+      <div *ngIf="!datosCorrectos" class="alert alert-warning" role="alert">
+        {{ textoError }}
+      </div>
+
     </div>
   </div>

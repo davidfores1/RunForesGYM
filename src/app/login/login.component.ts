@@ -10,6 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   formularioLgin!: FormGroup;
+  datosCorrectos: boolean = true;
+  textoError!:string;
 
   constructor(private creadorFormulario: FormBuilder, private afAuth: AngularFireAuth) { }
 
@@ -25,11 +27,21 @@ export class LoginComponent implements OnInit {
 
   ingresar(){
     
-   this.afAuth.auth.signInWithEmailAndPassword(this.formularioLgin.value.email, this.formularioLgin.value.password)
-   .then((usuario)=>{
-     console.log(usuario);
-     
-   })
+   if(this.formularioLgin.valid){
+
+    this.datosCorrectos = true;
+    this.afAuth.auth.signInWithEmailAndPassword(this.formularioLgin.value.email, this.formularioLgin.value.password)
+    .then((usuario)=>{
+      console.log(usuario);
+    }).catch((error)=>{
+      this.datosCorrectos = false;
+      this.textoError = error.message
+    })
+
+   }else{
+    this.datosCorrectos = false;
+    this.textoError = "Por favor revisar que los datos esten correctos"
+   }
 
   }
 
