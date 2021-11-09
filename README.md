@@ -3,7 +3,7 @@ Angular CLI: 12.1.4<br>
 Angular: 12.1.5<br>
 firebase": "^7.24.0
 
-<h2>Al clonar un proyecto de Laravel desde GitHub:</h2>
+<h2>Al clonar el repositorio GitHub:</h2>
 Ejecutar npm install
 
 npm install nos descargara todas las dependencias necesarias para poder ejecutar nuestro proyecto angular en el servidor local.
