@@ -14,11 +14,14 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { EncabezadoComponent } from './encabezado/encabezado.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EncabezadoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     AccordionModule.forRoot(),
     NgxSpinnerModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    BsDropdownModule.forRoot()
   ],
   providers: [AngularFireAuth],
   bootstrap: [AppComponent]

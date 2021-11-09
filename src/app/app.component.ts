@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import {User} from 'firebase/app';
+import { User } from 'firebase/app';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +11,22 @@ import {User} from 'firebase/app';
 export class AppComponent {
   title = 'RunForesGYM';
   usuario!: User;
-  cargando:boolean = true;
-  
+  cargando: boolean = true;
+
 
   constructor(private afAuth: AngularFireAuth) {
-  
-  this.afAuth.user.subscribe((usuario)=>{
 
-    setTimeout(() => {
+    this.afAuth.user.subscribe((usuario) => {
+
       this.cargando = false
-    }, 2000);
-    this.usuario = usuario!;
-  })
+      this.usuario = usuario!;
+
+    })
 
   }
 
   ngOnInit(): void {
-    
+
   }
 
   logout() {
