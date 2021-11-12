@@ -6,61 +6,21 @@
             <div class="col-sm-3">
                 <input class="form-control" type="text" placeholder="Buscar cliente">
             </div>
-        </div>   
+        </div>
     </form>
 
 
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-3" *ngFor="let cliente of clientes">
             <div class="card">
                 <img class="card-img-top"
-                    src="https://image.freepik.com/vector-gratis/diseno-avatar-persona_24877-38137.jpg"
+                    [src]="cliente.url_imagen"
                     alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{ cliente.nombre }} {{ cliente.apellido }}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                     <a href="#" class="card-link">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxJqi172Fp0xQzxHuf37J1k65gGzlB_7wYPBhnqBfHMc4giFtHLqzj_HoYq3KbwbJ0Ms&usqp=CAU"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="card-link">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYuvTFEgF7whI-rW-QJ3oYnMGddzSDfEjnWmmFTm-BDhrIDPj0lWvi_097O3cryw7VnI&usqp=CAU"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="card-link">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgoIgFyeAODJFKQmJgDPDhfq3Cwh6Vd-xm4I-Xy8ewKzSkDF7Eq0tak2hwSfAKhYQmGPo&usqp=CAU"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="card-link">Editar</a>
-                    <a href="#" class="card-link">Desactivar</a>
                 </div>
             </div>
         </div>

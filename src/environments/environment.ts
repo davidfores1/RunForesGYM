@@ -6,13 +6,13 @@ export const environment = {
   production: false,
 
   firebase:{
-      apiKey: "AIzaSyAGMl5cgAa_GittR0Un0cei6dIXGESyPUg",
-      authDomain: "runforesgym.firebaseapp.com",
-      projectId: "runforesgym",
-      storageBucket: "runforesgym.appspot.com",
-      messagingSenderId: "950899331509",
-      appId: "1:950899331509:web:1c2dc64eacd1354c7109fc",
-      measurementId: "G-7819J3KNYK"
+    apiKey: "AIzaSyC5cCtWOJWdc-Ihz9YbRg3M9FdqqB_Q2TQ",
+    authDomain: "rungym-4abe1.firebaseapp.com",
+    projectId: "rungym-4abe1",
+    storageBucket: "rungym-4abe1.appspot.com",
+    messagingSenderId: "219446232904",
+    appId: "1:219446232904:web:2b8bc7b12f0ddd9ce9557d",
+    measurementId: "G-87GGD5MKKP"
   }
 };
 

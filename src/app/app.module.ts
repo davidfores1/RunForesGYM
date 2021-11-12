@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,13 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AccordionModule.forRoot(),
     NgxSpinnerModule,
     FormsModule,
+    AccordionModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     BsDropdownModule.forRoot()
   ],
-  providers: [AngularFireAuth],
+  providers: [AngularFireAuth,AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
