@@ -12,9 +12,9 @@ export class LoginComponent implements OnInit {
 
   formularioLgin!: FormGroup;
   datosCorrectos: boolean = true;
-  textoError!:string;
+  textoError!: string;
 
-  constructor(private creadorFormulario: FormBuilder, private afAuth: AngularFireAuth,private spinner: NgxSpinnerService) { }
+  constructor(private creadorFormulario: FormBuilder, private afAuth: AngularFireAuth, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
 
@@ -22,29 +22,37 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.compose([
         Validators.required, Validators.email
       ])],
-      password:['', Validators.required]
+      password: ['', Validators.required]
     });
   }
 
-  ingresar(){
-    
-   if(this.formularioLgin.valid){
-    this.datosCorrectos = true;
-    this.spinner.show();
-    this.afAuth.auth.signInWithEmailAndPassword(this.formularioLgin.value.email, this.formularioLgin.value.password)
-    .then((usuario: any)=>{
-      console.log(usuario);
-      this.spinner.hide();
-    }).catch((error: { message: string; })=>{
-      this.datosCorrectos = false;
-      this.textoError = error.message
-      this.spinner.hide();
-    })
+  ingresar() {
 
-   }else{
-    this.datosCorrectos = false;
-    this.textoError = "Por favor revisar que los datos esten correctos"
-   }
+    if (this.formularioLgin.valid) {
+      
+      this.datosCorrectos = true;
+      this.spinner.show();
+
+      this.afAuth.auth.signInWithEmailAndPassword(this.formularioLgin.value.email, this.formularioLgin.value.password)
+        .then((usuario: any) => {
+          
+          console.log(usuario);
+          this.spinner.hide();
+
+        }).catch((error: { message: string; }) => {
+          
+          this.datosCorrectos = false;
+          this.textoError = error.message
+          this.spinner.hide();
+
+        })
+
+    } else {
+
+      this.datosCorrectos = false;
+      this.textoError = "Por favor revisar que los datos esten correctos"
+    
+    }
 
   }
 

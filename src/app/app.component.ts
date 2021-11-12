@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 import { User } from 'firebase/app';
 
 @Component({
@@ -19,6 +18,7 @@ export class AppComponent {
     this.afAuth.user.subscribe((usuario) => {
 
       this.cargando = false
+      
       this.usuario = usuario!;
 
     })
@@ -29,7 +29,4 @@ export class AppComponent {
 
   }
 
-  logout() {
-    this.afAuth.auth.signOut();
-  }
 }

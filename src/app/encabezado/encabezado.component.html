@@ -15,13 +15,13 @@
           </li>
 
         <li class="nav-item dropdown" dropdown>
-          <a class="nav-link dropdown-toggle" dropdownToggle href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Precios
+          <a class="nav-link dropdown-toggle" dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Clientes
           </a>
           <div class="dropdown-menu" *dropdownMenu aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Agregar clientes</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Ver clientes</a>
+            <a class="dropdown-item" routerLink="/listado-clientes">Ver clientes</a>
           </div>
         </li>
         <li class="nav-item dropdown" dropdown>
@@ -56,4 +56,6 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form> -->
     </div>
+
+    <button class="btn btn-primary" (click)="logout()">Salir</button>
   </nav>
